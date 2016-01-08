@@ -3,12 +3,18 @@ version: 0
 binaries:
   sensor-temp-pcsensor:
     exec: usr/local/bin/pcsensor
+  lm-sensors:
+    exec: usr/bin/sensors
 summary: sensor examples
 description: a set of sensor examples for snappy
 icon: icon.png
+vendor: Alexander Sack <asac@canonical.com>
 
 parts:
   pcsensor:
     plugin: make
     source: git://github.com/asac/usb-thermometer
-
+  lm-sensors:
+    stage-packages: [ lm-sensors ]
+    plugin: make
+    source: lm-sensors

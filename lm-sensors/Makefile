@@ -1,0 +1,6 @@
+
+default:
+	# noop
+
+install:
+	# noop
