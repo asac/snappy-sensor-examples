@@ -5,6 +5,8 @@ binaries:
     exec: usr/local/bin/pcsensor
   lm-sensors:
     exec: usr/bin/sensors
+  vmstat:
+    exec: usr/bin/vmstat
 summary: sensor examples
 description: a set of sensor examples for snappy
 icon: icon.png
@@ -17,4 +19,9 @@ parts:
   lm-sensors:
     stage-packages: [ lm-sensors ]
     plugin: make
-    source: lm-sensors
+    source: ./lm-sensors
+  vmstat:
+    plugin: copy
+    source: ./vmstat
+    files:
+      vmstat/vmstat: usr/bin/vmstat
