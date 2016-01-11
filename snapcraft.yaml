@@ -11,6 +11,8 @@ summary: sensor examples
 description: a set of sensor examples for snappy
 icon: icon.png
 vendor: Alexander Sack <asac@canonical.com>
+build-packages:
+  - libudev-dev
 
 parts:
   pcsensor:
@@ -25,3 +27,11 @@ parts:
     source: ./vmstat
     files:
       vmstat/vmstat: usr/bin/vmstat
+  openzwave:
+    plugin: make
+    source: git://github.com/asac/open-zwave
+#  openzwave-control-panel:
+#    plugin: make
+#    source: git://github.com/OpenZWave/open-zwave-control-panel
+#    after: [ openzwave ]
+
